@@ -1,0 +1,26 @@
+# Generating secret in kubernetes (only for development)
+
+> kubectl create secret generic jwt-secret --from-literal=JWT_KEY=asdfs2324fsdaf
+
+# List ALL namespace
+
+> kubectl get namespace
+
+# List all services inside namespace
+
+> kubectl get services -n <namespace>
+
+# NATS Streaming Server
+
+See 'Command Line Options' at [https://hub.docker.com/_/nats-streaming]
+
+# NATS (any Service/Pods) - port forwarding command
+
+> kubectl get pods
+
+from above command result copy the pod name you wanted to make available from outside the kubernetes cluster, and run below command:
+
+> kubectl port-forward <POD_NAME> 4222:4222
+
+- first port (4222): port on local machine through which request goes from local machine
+- second port (4222): port inside the pod that local machine trying to access
