@@ -8,8 +8,7 @@ it('should return the details of current logged in user', async () => {
     .get('/api/users/current-user')
     .set('Cookie', cookie)
     .send()
-    .expect(200);
-  // console.log(response.body);
+    .expect(400);
   expect(response.body.currentUser.email).toEqual('test@test.com');
 });
 
