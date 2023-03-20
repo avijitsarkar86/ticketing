@@ -9,7 +9,6 @@ it('should return the details of current logged in user', async () => {
     .set('Cookie', cookie)
     .send()
     .expect(200);
-  // console.log(response.body);
   expect(response.body.currentUser.email).toEqual('test@test.com');
 });
 
